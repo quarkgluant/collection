@@ -1,4 +1,4 @@
-### challenge 1
+ ### challenge 1
 data = [
   ['Frank', 33],
   ['Stacy', 15],
@@ -33,3 +33,31 @@ end
 res
 
 # 2: State Capitals
+states = {"Oregon" => "OR",
+          "Alabama" => "AL",
+          "New Jersey" => "NJ",
+          "Colorado" => "CO"}
+
+capitals = {"OR" => "Salem",
+            "AL" => "Montgomery",
+            "NJ" => "Trenton",
+            "CO" => "Denver"}
+
+# * Level 1: Write some code which given a state name ("Oregon") outputs
+#   its capital ("Salem")
+state_name = "Colorado"
+capitals[states[state_name]]
+
+# * Level 2: Handle the case when a state's information is not known by
+#   returning "Unknown"
+if capitals[states[state_name]].nil?
+	puts "Unknow"
+else
+	puts capitals[states[state_name]]
+end
+
+# * Level 3: Now let's go the other way. Given a capital name ("Denver"),
+#   return the state name for which it is the capital ("Colorado")
+capital_name = "Denver"
+states.invert[capitals.invert[capital_name]]
+
